@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+
+
+</head>
+<body>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=164130857645897&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '164130857645897',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v2.12'
+      });
+
+      FB.AppEvents.logPageView();
+
+
+      FB.getLoginStatus(function(response) {
+          statusChangeCallback(response);
+      });
+
+    };
+
+    // (function(d, s, id){
+    //    var js, fjs = d.getElementsByTagName(s)[0];
+    //    if (d.getElementById(id)) {return;}
+    //    js = d.createElement(s); js.id = id;
+    //    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    //    fjs.parentNode.insertBefore(js, fjs);
+    //  }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+
+</body>
+</html>
